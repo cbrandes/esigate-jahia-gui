@@ -10,8 +10,9 @@
 	</parent>
 	<artifactId>esigate-jahia</artifactId>
 	<name>Esigate Tags Module</name>
-	<version>1.0.0-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<version>1.0-SNAPSHOT</version>
+	
+    <packaging>bundle</packaging>
 
 	<dependencies>
 		<dependency>
@@ -70,6 +71,17 @@
 					<verbose>true</verbose>
 				</configuration>
 			</plugin>
+			
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Jahia-Depends>default</Jahia-Depends>
+                    </instructions>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 <!-- 	<profiles>
