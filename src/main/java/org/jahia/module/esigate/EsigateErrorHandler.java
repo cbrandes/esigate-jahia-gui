@@ -1,4 +1,4 @@
-package org.gullcompany.esigate;
+package org.jahia.module.esigate;
 
 import java.io.IOException;
 

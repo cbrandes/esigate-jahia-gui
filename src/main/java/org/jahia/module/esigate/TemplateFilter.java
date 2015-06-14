@@ -1,4 +1,4 @@
-package org.gullcompany.esigate;
+package org.jahia.module.esigate;
 
 import org.apache.commons.lang.StringUtils;
 import org.jahia.services.content.JCRNodeWrapper;

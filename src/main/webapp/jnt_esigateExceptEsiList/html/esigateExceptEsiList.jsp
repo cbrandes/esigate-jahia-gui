@@ -12,7 +12,7 @@
 </c:if>
 
 <c:forEach items="${currentNode.nodes}" var="exceptPart">
-    <c:if test="${jcr:isNodeType(exceptPart,'gnt:esigateExceptEsi')}">
+    <c:if test="${jcr:isNodeType(exceptPart,'jnt:esigateExceptEsi')}">
         <template:module node="${exceptPart}" view="default"/>
     </c:if>
 </c:forEach>
