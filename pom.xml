@@ -6,25 +6,29 @@
 	<parent>
 		<groupId>org.jahia.modules</groupId>
 		<artifactId>jahia-modules</artifactId>
-		<version>7.0.0.4</version>
+		<version>6.6.2.7</version>
 	</parent>
 	<artifactId>esigate-jahia</artifactId>
 	<name>Esigate Tags Module</name>
 	<version>1.0-SNAPSHOT</version>
-	
-    <packaging>bundle</packaging>
+
+	<properties>
+		<jahia.version>6.6.2.7</jahia.version>
+	</properties>
+
+    <packaging>war</packaging>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.jahia.server</groupId>
 			<artifactId>jahia-impl</artifactId>
-            <version>7.0.0.4</version>
+            <version>${jahia.version}</version>
             <scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.jahia.server</groupId>
 			<artifactId>jahia-taglib</artifactId>
-            <version>7.0.0.4</version>
+            <version>${jahia.version}</version>
             <scope>provided</scope>
 		</dependency>
 	</dependencies>
@@ -109,6 +113,28 @@
 	</profiles>
 	-->
 		<profiles>
+			<profile>
+				<id>jahia6</id>
+				<activation>
+					<activeByDefault>false</activeByDefault>
+				</activation>
+				<properties>
+					<project.packaging>war</project.packaging>
+					<jahia.version>6.6.2.7</jahia.version>
+				</properties>
+			</profile>
+			<profile>
+				<id>jahia7</id>
+				<activation>
+					<activeByDefault>false</activeByDefault>
+				</activation>
+				<properties>
+					<project.packaging>bundle</project.packaging>
+					<jahia.version>7.0.0.4</jahia.version>
+				</properties>
+
+
+			</profile>
 		<profile>
 			<id>dev</id>
 			<build>
@@ -128,6 +154,8 @@
 				</plugins>
 			</build>
 		</profile>
+			<!--
+		-->
 		<profile>
 			<id>clean-and-deploy-module</id>
 			<activation>
@@ -188,9 +216,6 @@
 			</build>
 		</profile>
 	</profiles>
-	
-	
-
     <repositories>
         <repository>
             <id>jahiaRepository</id>

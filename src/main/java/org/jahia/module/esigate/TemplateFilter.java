@@ -26,7 +26,7 @@ public class TemplateFilter extends AbstractFilter {
 	public String execute(String previousOut, RenderContext renderContext,
 			Resource resource, RenderChain chain) throws Exception {
 		JCRNodeWrapper node = resource.getNode();
-		if (node.isNodeType("smix:esigateTemplatePage")
+		if (node.isNodeType("jmix:esigateTemplatePage")
 				&& node.getProperty("doExecute").getBoolean()) {
 			String originalPageURL=renderContext.getRequest().getParameter("originalPagePath");
 			String cachedRenderContent;
