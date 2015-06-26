@@ -9,7 +9,7 @@
 <c:if test="${renderContext.editMode}">
 <template:addResources type="css" resources="esigate-tags.css"/>
 <fieldset class="esigate esigateWhen">
-    <legend title="test : ${test.string}">ESI : when</legend>
+    <legend title="test : ${test.string}"><fmt:message key="label.esigateChoose.whenBlock" /></legend>
     <div class="innerEsi">
 </c:if>
 

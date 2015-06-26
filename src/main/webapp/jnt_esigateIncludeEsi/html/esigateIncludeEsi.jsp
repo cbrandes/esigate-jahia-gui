@@ -6,7 +6,7 @@
 <c:if test="${renderContext.editMode}">
 <template:addResources type="css" resources="esigate-tags.css"/>
 <fieldset class="esigate esigateInclude">
-	<legend title="provider : ${currentNode.properties.provider.string} - src : ${currentNode.properties.src.string} - fragment : ${currentNode.properties.fragment.string}">ESI : include</legend>
+	<legend title="provider : ${currentNode.properties.provider.string} - src : ${currentNode.properties.src.string} - fragment : ${currentNode.properties.fragment.string}"><fmt:message key="label.esigateInclude"/></legend>
     <div class="innerEsi">
 </c:if>
 
@@ -20,14 +20,12 @@
 	<c:if test="${not empty currentNode.properties.continueOnError && currentNode.properties.continueOnError.boolean}"> onerror="continue"</c:if>>
     <template:area  path="${currentNode.name}" areaAsSubNode="true"/>
 </esi:include>
-
-<template:addResources>
-<%-- 
-<esi:include>
-</esi:include>
---%>
-</template:addResources>
-
+<c:if test="${not empty currentNode.properties.styleSheet}">
+    <template:addResources>
+        <esi:include src="${provider}${currentNode.properties.src.string}" fragment="${currentNode.properties.styleSheet.string}" onerror="continue">
+        </esi:include>
+    </template:addResources>
+</c:if>
 <c:if test="${renderContext.editMode}">
     </div>
 </fieldset>

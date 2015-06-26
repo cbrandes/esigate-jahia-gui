@@ -9,9 +9,9 @@
 <c:if test="${renderContext.editMode}">
 <template:addResources type="css" resources="esigate-tags.css"/>
 <fieldset class="esigate esigateComment">
-    <legend title="text : ${text.string}">ESI : comment</legend>
+    <legend title="text : ${text.string}"><fmt:message key="label.esigateComment" /></legend>
     <div class="innerEsi">
-    	Commented text : ${text.string}
+    <fmt:message key="content.esigateComment" />${text.string}
 </c:if>
 
 <esi:comment text="${text.string}" />

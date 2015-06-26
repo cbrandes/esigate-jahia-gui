@@ -10,7 +10,7 @@
 <c:if test="${renderContext.editMode}">
 <template:addResources type="css" resources="esigate-tags.css" />
 <fieldset class="esigate esigateReplace">
-    <legend title="fragment : ${fragment.string} - expression : ${expression.string}">ESI : Replace</legend>
+    <legend title="fragment : ${fragment.string} - expression : ${expression.string}"><fmt:message key="label.esigateReplace"/></legend>
     <div class="innerEsi">
 </c:if>
 

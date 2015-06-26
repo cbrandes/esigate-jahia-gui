@@ -10,13 +10,13 @@
 <c:if test="${renderContext.editMode}">
 <template:addResources type="css" resources="esigate-tags.css"/>
 <fieldset class="esigate esigateTry">
-    <legend>ESI : Try</legend>
+    <legend><fmt:message key="label.esigateTry" /></legend>
     <div class="innerEsi">
 </c:if>
 
 <esi:try>
-	<template:module node="${attemptNode }" view="default" editable="true"/>
-	<template:module node="${exceptListNode }" view="default" editable="true"/>
+	<template:module node="${attemptNode}" view="default" editable="true"/>
+	<template:module node="${exceptListNode}" view="default" editable="true"/>
 </esi:try>
 
 <c:if test="${renderContext.editMode}">

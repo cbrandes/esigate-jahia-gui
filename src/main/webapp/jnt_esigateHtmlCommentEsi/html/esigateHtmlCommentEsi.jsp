@@ -7,7 +7,7 @@
 <c:if test="${renderContext.editMode}">
 <template:addResources type="css" resources="esigate-tags.css"/>
 <fieldset class="esigate esigateComment">
-    <legend>ESI : Html Comment</legend>
+    <legend><fmt:message key="label.esigateHtmlComment" /> </legend>
     <div class="innerEsi">
 </c:if>
 
