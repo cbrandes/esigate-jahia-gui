@@ -9,7 +9,7 @@
 <c:if test="${renderContext.editMode}">
 <template:addResources type="css" resources="esigate-tags.css"/>
 <fieldset class="esigate esigateInline">
-    <legend title="fragmentName : ${fragmentName.string} - fetchable : ${fetchable.boolean}">ESI : inline</legend>
+    <legend title="fragmentName : ${fragmentName.string} - fetchable : ${fetchable.boolean}"><fmt:message key="label.esigateInline"/></legend>
     <div class="innerEsi">
 </c:if>
 

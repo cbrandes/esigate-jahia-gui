@@ -7,12 +7,12 @@
 <c:if test="${renderContext.editMode}">
 <template:addResources type="css" resources="esigate-tags.css"/>
 <fieldset class="esigate esigateWhenList">
-    <legend>ESI : When list</legend>
+    <legend><fmt:message key="label.esigateChoose.whenBlockList" /></legend>
     <div class="innerEsi">
 </c:if>
 
 <c:forEach items="${currentNode.nodes}" var="whenNode">
-    <c:if test="${jcr:isNodeType(whenNode,'gnt:esigateWhenEsi')}">
+    <c:if test="${jcr:isNodeType(whenNode,'jnt:esigateWhenEsi')}">
         <template:module node="${whenNode}" view="default"/>
     </c:if>
 </c:forEach>

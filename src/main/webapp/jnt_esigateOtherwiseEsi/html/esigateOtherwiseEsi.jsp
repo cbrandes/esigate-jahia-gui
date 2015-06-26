@@ -7,7 +7,7 @@
 <c:if test="${renderContext.editMode}">
 <template:addResources type="css" resources="esigate-tags.css"/>
 <fieldset class="esigate esigateOtherwise">
-    <legend>ESI : otherwise</legend>
+    <legend><fmt:message key="label.esigateChoose.otherwise" /> </legend>
     <div class="innerEsi">
 </c:if>
 

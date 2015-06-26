@@ -9,7 +9,8 @@
 <c:if test="${renderContext.editMode}">
 <template:addResources type="css" resources="esigate-tags.css"/>
 <fieldset class="esigate esigateExcept">
-    <legend title="code : ${code.string}">ESI : except</legend>
+    <legend title="code : ${code.string}"><fmt:message key="label.esigateTry.exceptBlock"/></legend>
+
     <div class="innerEsi">
 </c:if>
 
