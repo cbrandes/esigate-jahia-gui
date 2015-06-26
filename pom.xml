@@ -8,8 +8,8 @@
 		<artifactId>jahia-modules</artifactId>
 		<version>6.6.2.7</version>
 	</parent>
-	<artifactId>esigate-jahia</artifactId>
-	<name>Esigate Tags Module</name>
+	<artifactId>esigate-jahia-gui</artifactId>
+	<name>Esigate GUI Module</name>
 	<version>1.0-SNAPSHOT</version>
 
 	<properties>
