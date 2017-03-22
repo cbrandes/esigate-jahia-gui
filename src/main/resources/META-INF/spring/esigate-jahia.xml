@@ -7,7 +7,8 @@
         <property name="priority" value="16" />
         <property name="applyOnConfigurations" value="page" />
     </bean>
-    
+
+
     <bean name="EsigateErrorHandler" class="org.jahia.module.esigate.EsigateErrorHandler">
         <property name="urlResolverFactory" ref="urlResolverFactory" />
     </bean>
