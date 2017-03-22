@@ -6,14 +6,14 @@
     <parent>
         <groupId>org.jahia.modules</groupId>
         <artifactId>jahia-modules</artifactId>
-        <version>7.0.0.4</version>
+        <version>7.1.2.0</version>
     </parent>
     <artifactId>esigate-jahia-gui</artifactId>
-    <name>Esigate GUI Module</name>
+    <name>esigate-jahia-gui</name>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <jahia.version>7.0.0.4</jahia.version>
+        <jahia.version>7.1.2.0</jahia.version>
     </properties>
 
     <packaging>bundle</packaging>
@@ -37,37 +37,6 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <configuration>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                    <warSourceExcludes>resources/*.properties</warSourceExcludes>
-                    <webResources>
-                        <resource>
-                            <directory>${project.build.directory}/native2ascii</directory>
-                            <targetPath>resources</targetPath>
-                        </resource>
-                    </webResources>
-                    <archive>
-                        <manifestEntries>
-                            <Implementation-Title>${project.name}</Implementation-Title>
-                            <Implementation-Version>${project.version}</Implementation-Version>
-                            <Implementation-Vendor></Implementation-Vendor>
-                            <Implementation-Vendor-Id></Implementation-Vendor-Id>
-                            <Implementation-URL></Implementation-URL>
-                            <Specification-Title>${project.name}</Specification-Title>
-                            <Specification-Version>${project.version}</Specification-Version>
-                            <Specification-Vendor></Specification-Vendor>
-                            <package-name>${project.name}</package-name>
-                            <depends>Default Jahia Templates</depends>
-                            <root-folder>${project.artifactId}</root-folder>
-                            <module-type>module</module-type>
-                        </manifestEntries>
-                    </archive>
-                    <archiveClasses>true</archiveClasses>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
                     <source>1.6</source>
@@ -88,118 +57,8 @@
             </plugin>
         </plugins>
     </build>
-    <!-- 	<profiles>
-            <profile>
-                <id>clean-and-deploy-module</id>
-                <build>
-                    <plugins>
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-antrun-plugin</artifactId>
-                            <configuration>
-                                <skip>false</skip>
-                            </configuration>
-                        </plugin>
-                        <plugin>
-                            <groupId>org.codehaus.mojo</groupId>
-                            <artifactId>exec-maven-plugin</artifactId>
-                            <configuration>
-                                <skip>false</skip>
-                            </configuration>
-                        </plugin>
-                    </plugins>
-                </build>
-            </profile>
-        </profiles>
-        -->
     <profiles>
 
-        <profile>
-            <id>dev</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.jahia.server</groupId>
-                        <artifactId>maven-jahia-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>deploy</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <!--
-        <profile>
-            <id>clean-and-deploy-module</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-antrun-plugin</artifactId>
-                            <executions>
-                                <execution>
-                                    <id>clean-and-deploy-module</id>
-                                    <phase>package</phase>
-                                    <goals>
-                                        <goal>run</goal>
-                                    </goals>
-                                </execution>
-                            </executions>
-                            <configuration>
-                                <target>
-                                    <echo>Cleaning module</echo>
-                                    <delete failonerror="false" verbose="true" includeemptydirs="true">
-                                        <fileset dir="${jahia.deploy.targetServerDirectory}/webapps/ROOT/modules/">
-                                            <include name="**/${project.artifactId}*/**"/>
-                                        </fileset>
-                                    </delete>
-                                    <delete failonerror="false" verbose="true">
-                                        <fileset
-                                                dir="${jahia.deploy.targetServerDirectory}/webapps/ROOT/WEB-INF/var/shared_modules/"
-                                                includes="**/${project.artifactId}*"/>
-                                        <fileset dir="${jahia.deploy.targetServerDirectory}/webapps/ROOT/WEB-INF/lib/"
-                                                 includes="**/${project.artifactId}*"/>
-                                    </delete>
-                                </target>
-                            </configuration>
-                        </plugin>
-                        <plugin>
-                            <groupId>org.codehaus.mojo</groupId>
-                            <artifactId>exec-maven-plugin</artifactId>
-                            <executions>
-                                <execution>
-                                    <id>clean-and-deploy-module</id>
-                                    <phase>package</phase>
-                                    <goals>
-                                        <goal>exec</goal>
-                                    </goals>
-                                </execution>
-                            </executions>
-                            <configuration>
-                                <executable>${jahia.deploy.targetServerDirectory}/../deployModule.sh</executable>
-                                <arguments>
-                                    <argument>
-                                        ${basedir}/target/${project.artifactId}-${project.version}.${project.packaging}
-                                    </argument>
-                                    <argument>${jahia.deploy.targetServerDirectory}/webapps/ROOT</argument>
-                                </arguments>
-                            </configuration>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
-            </build>
-        </profile>
-
-    -->
     </profiles>
     <repositories>
         <repository>
